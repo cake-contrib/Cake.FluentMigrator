@@ -8,11 +8,12 @@ using Cake.Core.Tooling;
 
 namespace Cake.FluentMigrator
 {
-    public class FluentMigratorRunner : Tool<FluentMigratorSettings> {
+    public class FluentMigratorRunner : Tool<FluentMigratorSettings>
+    {
 
         private readonly IFluentMigratorToolResolver _toolResolver;
 
-        public FluentMigratorRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, IFluentMigratorToolResolver toolResolver) 
+        public FluentMigratorRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, IFluentMigratorToolResolver toolResolver)
             : base(fileSystem, environment, processRunner, tools)
         {
             _toolResolver = toolResolver;
@@ -47,7 +48,7 @@ namespace Cake.FluentMigrator
         /// </returns>
         protected override IEnumerable<FilePath> GetAlternativeToolPaths(FluentMigratorSettings settings)
         {
-            return new[] { _toolResolver.ResolvePath()};
+            return new[] { _toolResolver.ResolvePath() };
         }
 
 
@@ -72,14 +73,53 @@ namespace Cake.FluentMigrator
             }
 
             var builder = new ProcessArgumentBuilder();
-            builder.Append("-db");
-            builder.Append(settings.Provider);
-            builder.Append("-c");
-            builder.AppendQuoted(settings.Connection);
-            builder.Append("-a");
-            builder.AppendQuoted(settings.Assembly.FullPath);
+            AddArgument(builder, "-db", settings.Provider);
+            AddArgument(builder, "-c", settings.Connection);
+            AddArgument(builder, "-a", settings.Assembly.FullPath);
+            AddArgument(builder, "-configPath", settings.ConnectionStringConfigPath);
+            AddArgument(builder, "-ns", settings.Namespace);
+            AddArgument(builder, "-nested", settings.NestedNamespaces);
+            AddArgument(builder, "-o", settings.Output);
+            AddArgument(builder, "-of", settings.OutputFileName);
+            AddArgument(builder, "-p", settings.PreviewOnly);
+            AddArgument(builder, "-steps", settings.Steps.ToString());
+            AddArgument(builder, "-t", settings.Task);
+            AddArgument(builder, "-version", settings.Version.ToString());
+            AddArgument(builder, "-startVersion", settings.StartVersion.ToString());
+            AddArgument(builder, "-noConnection", settings.NoConnection);
+            AddArgument(builder, "-verbose", settings.Verbose);
+            AddArgument(builder, "-profile", settings.Profile);
+            AddArgument(builder, "-context", settings.ApplicationContext);
+            AddArgument(builder, "-timeout", settings.Timeout.ToString());
+            AddArgument(builder, "-tps", settings.TransactionPerSession);
+
+            if (settings.Tags != null)
+            {
+                foreach (var tag in settings.Tags)
+                {
+                    AddArgument(builder, "-tag", tag);
+                }
+            }
+
 
             return builder;
+        }
+
+        private static void AddArgument(ProcessArgumentBuilder builder, string @switch, string value)
+        {
+            if (String.IsNullOrEmpty(value))
+                return;
+
+            builder.Append(@switch);
+            builder.AppendQuoted(value);
+        }
+
+        private static void AddArgument(ProcessArgumentBuilder builder, string @switch, bool value)
+        {
+            if (!value)
+                return;
+
+            builder.Append(@switch);
         }
 
         public void Run(FluentMigratorSettings settings)
@@ -88,7 +128,7 @@ namespace Cake.FluentMigrator
             {
                 throw new ArgumentNullException(nameof(settings));
             }
-
+            
             Run(settings, GetArguments(settings));
         }
     }
