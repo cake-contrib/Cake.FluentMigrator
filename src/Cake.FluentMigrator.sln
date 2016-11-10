@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.FluentMigrator", "Cake.FluentMigrator\Cake.FluentMigrator.csproj", "{2803512B-59C0-4A53-91E5-4D1C40949A63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.FluentMigrator.UnitTests", "Cake.FluentMigrator.UnitTests\Cake.FluentMigrator.UnitTests.csproj", "{08F1BC1D-4A27-418C-9044-51055A06B5FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.FluentMigrator.Tests", "Cake.FluentMigrator.Tests\Cake.FluentMigrator.Tests.csproj", "{08F1BC1D-4A27-418C-9044-51055A06B5FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,27 +4,42 @@ using Cake.Core.Tooling;
 
 namespace Cake.FluentMigrator
 {
+    /// <summary>
+    /// Contains FluentMigrator resolver functionality
+    /// </summary>
     public class FluentMigratorToolResolver : IFluentMigratorToolResolver
     {
         private readonly IFileSystem _fileSystem;
         private readonly ICakeEnvironment _environment;
-        private readonly IToolLocator _tools;
+        private readonly IToolLocator _toolLocator;
 
-        public FluentMigratorToolResolver(IFileSystem fileSystem, ICakeEnvironment environment, IToolLocator tools)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FluentMigratorToolResolver" /> class.
+        /// </summary>
+        /// <param name="fileSystem">The file system.</param>
+        /// <param name="environment">The environment.</param>
+        /// <param name="toolLocator">The tool locator.</param>
+        public FluentMigratorToolResolver(IFileSystem fileSystem, ICakeEnvironment environment, IToolLocator toolLocator)
         {
             _fileSystem = fileSystem;
             _environment = environment;
-            _tools = tools;
+            _toolLocator = toolLocator;
         }
 
+        /// <summary>
+        /// Resolves the path to Migrate.exe.
+        /// </summary>
+        /// <returns>The path to Migrate.exe.</returns>
         public FilePath ResolvePath()
         {
             var arch = _environment.Platform.Is64Bit ? "AnyCPU" : "x86";
             var frameworkVersion = _environment.Runtime.TargetFramework.Version.Major >= 4 ? "40" : "35";
-            var toolPath =_tools.Resolve($"{arch}/{frameworkVersion}/Migrate.exe");
+            var toolPath = _toolLocator.Resolve($"{arch}/{frameworkVersion}/Migrate.exe");
 
-            if(toolPath == null || !_fileSystem.Exist(toolPath))
-                throw new CakeException($"Could not locate migrate.exe for {arch}/{frameworkVersion}");
+            if (toolPath == null || !_fileSystem.Exist(toolPath))
+            {
+                throw new CakeException($"Could not locate Migrate.exe for {arch}/{frameworkVersion}");
+            }
 
             return toolPath;
         }

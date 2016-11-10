@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Versioning;
-using System.Text;
-using System.Threading.Tasks;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
 using NSubstitute;
 
-namespace Cake.FluentMigrator.UnitTests
+namespace Cake.FluentMigrator.Tests
 {
     class ToolResolverFixture
     {
         public ICakeEnvironment Environment { get; set; }
+
         public IFileSystem FileSystem { get; set; }
+
         public IToolLocator ToolLocator { get; set; }
 
         public ToolResolverFixture(PlatformFamily family, bool is64Bit, Version frameworkVersion)
@@ -27,6 +25,7 @@ namespace Cake.FluentMigrator.UnitTests
                 platform.Family.Returns(family);
                 return platform;
             });
+
             Environment.Runtime.Returns(info =>
             {
                 var runtime = Substitute.For<ICakeRuntime>();

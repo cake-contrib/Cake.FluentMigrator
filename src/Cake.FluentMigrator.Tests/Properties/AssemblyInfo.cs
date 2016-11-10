@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Cake.FluentMigrator")]
-[assembly: AssemblyDescription("Cake FluentMigrator Addin")]
+[assembly: AssemblyTitle("Cake.FluentMigrator.Tests")]
+[assembly: AssemblyDescription("Cake FluentMigrator Addin Tests")]
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
 #else
@@ -20,4 +20,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b980422a-4019-4bd5-9dfc-6118963e85b6")]
+[assembly: Guid("08f1bc1d-4a27-418c-9044-51055a06b5fc")]

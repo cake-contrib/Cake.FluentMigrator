@@ -176,3 +176,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Build related
+tools/
+BuildArtifacts/
