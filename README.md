@@ -21,6 +21,10 @@ Cake.FluentMigrator is an Addin for [Cake](http://cakebuild.net/) which allows t
 
 [![Coverage Status](https://coveralls.io/repos/github/cake-contrib/Cake.FluentMigrator/badge.svg?branch=develop)](https://coveralls.io/github/cake-contrib/Cake.FluentMigrator?branch=develop)
 
+## Quick Links
+
+- [Documentation](https://cake-contrib.github.io/Cake.FluentMigrator/)
+
 ## Chat Room
 Come join in the conversation about Cake.FluentMigrator in our Gitter Chat Room
 
