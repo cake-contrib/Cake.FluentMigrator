@@ -42,8 +42,8 @@ var searchModule = function() {
 
     a({
         id:1,
-        title:"IFluentMigratorToolResolver",
-        content:"IFluentMigratorToolResolver",
+        title:"FluentMigratorAliases",
+        content:"FluentMigratorAliases",
         description:'',
         tags:''
     });
@@ -58,16 +58,16 @@ var searchModule = function() {
 
     a({
         id:3,
-        title:"FluentMigratorRunner",
-        content:"FluentMigratorRunner",
+        title:"IFluentMigratorToolResolver",
+        content:"IFluentMigratorToolResolver",
         description:'',
         tags:''
     });
 
     a({
         id:4,
-        title:"FluentMigratorAliases",
-        content:"FluentMigratorAliases",
+        title:"FluentMigratorRunner",
+        content:"FluentMigratorRunner",
         description:'',
         tags:''
     });
@@ -79,8 +79,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/IFluentMigratorToolResolver',
-        title:"IFluentMigratorToolResolver",
+        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorAliases',
+        title:"FluentMigratorAliases",
         description:""
     });
 
@@ -91,14 +91,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorRunner',
-        title:"FluentMigratorRunner",
+        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/IFluentMigratorToolResolver',
+        title:"IFluentMigratorToolResolver",
         description:""
     });
 
     y({
-        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorAliases',
-        title:"FluentMigratorAliases",
+        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorRunner',
+        title:"FluentMigratorRunner",
         description:""
     });
 
