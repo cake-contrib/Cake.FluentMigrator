@@ -34,14 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"FluentMigratorRunner",
-        content:"FluentMigratorRunner",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
         title:"FluentMigratorToolResolver",
         content:"FluentMigratorToolResolver",
         description:'',
@@ -49,15 +41,7 @@ var searchModule = function() {
     });
 
     a({
-        id:2,
-        title:"FluentMigratorAliases",
-        content:"FluentMigratorAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:3,
+        id:1,
         title:"IFluentMigratorToolResolver",
         content:"IFluentMigratorToolResolver",
         description:'',
@@ -65,28 +49,32 @@ var searchModule = function() {
     });
 
     a({
-        id:4,
+        id:2,
         title:"FluentMigratorSettings",
         content:"FluentMigratorSettings",
         description:'',
         tags:''
     });
 
-    y({
-        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorRunner',
+    a({
+        id:3,
         title:"FluentMigratorRunner",
-        description:""
+        content:"FluentMigratorRunner",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:4,
+        title:"FluentMigratorAliases",
+        content:"FluentMigratorAliases",
+        description:'',
+        tags:''
     });
 
     y({
         url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorToolResolver',
         title:"FluentMigratorToolResolver",
-        description:""
-    });
-
-    y({
-        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorAliases',
-        title:"FluentMigratorAliases",
         description:""
     });
 
@@ -99,6 +87,18 @@ var searchModule = function() {
     y({
         url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorSettings',
         title:"FluentMigratorSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorRunner',
+        title:"FluentMigratorRunner",
+        description:""
+    });
+
+    y({
+        url:'/Cake.FluentMigrator/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorAliases',
+        title:"FluentMigratorAliases",
         description:""
     });
 
