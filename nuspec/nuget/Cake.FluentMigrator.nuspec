@@ -14,7 +14,7 @@
     <copyright>Copyright (c) Cake Contributions 2016 - Present</copyright>
     <tags>Cake, Script, Build, FluentMigrator</tags>
     <dependencies>
-      <dependency id="FluentMigrator.Tools" />
+      <dependency id="FluentMigrator.Tools" version="1.6.2"/>
     </dependencies>
   </metadata>
   <files>
