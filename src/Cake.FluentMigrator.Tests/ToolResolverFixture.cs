@@ -7,14 +7,8 @@ using NSubstitute;
 
 namespace Cake.FluentMigrator.Tests
 {
-    class ToolResolverFixture
+    internal class ToolResolverFixture
     {
-        public ICakeEnvironment Environment { get; set; }
-
-        public IFileSystem FileSystem { get; set; }
-
-        public IToolLocator ToolLocator { get; set; }
-
         public ToolResolverFixture(PlatformFamily family, bool is64Bit, Version frameworkVersion)
         {
             Environment = Substitute.For<ICakeEnvironment>();
@@ -29,12 +23,18 @@ namespace Cake.FluentMigrator.Tests
             Environment.Runtime.Returns(info =>
             {
                 var runtime = Substitute.For<ICakeRuntime>();
-                runtime.TargetFramework.Returns(callInfo => new FrameworkName(".Net 4.5.2", frameworkVersion));
+                runtime.BuiltFramework.Returns(callInfo => new FrameworkName(".Net 4.5.2", frameworkVersion));
                 return runtime;
             });
 
             FileSystem = Substitute.For<IFileSystem>();
             ToolLocator = Substitute.For<IToolLocator>();
         }
+
+        public ICakeEnvironment Environment { get; set; }
+
+        public IFileSystem FileSystem { get; set; }
+
+        public IToolLocator ToolLocator { get; set; }
     }
 }

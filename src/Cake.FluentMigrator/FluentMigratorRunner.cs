@@ -12,21 +12,61 @@ namespace Cake.FluentMigrator
     /// </summary>
     public class FluentMigratorRunner : Tool<FluentMigratorSettings>
     {
-
         private readonly IFluentMigratorToolResolver _resolver;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FluentMigratorRunner" /> class.
+        /// Initializes a new instance of the <see cref="FluentMigratorRunner"/> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
         /// <param name="processRunner">The process runner.</param>
         /// <param name="toolLocator">The tool locator.</param>
         /// <param name="resolver">The tool resolver</param>
-        public FluentMigratorRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator toolLocator, IFluentMigratorToolResolver resolver)
+        public FluentMigratorRunner(IFileSystem fileSystem, ICakeEnvironment environment,
+            IProcessRunner processRunner, IToolLocator toolLocator, IFluentMigratorToolResolver resolver)
             : base(fileSystem, environment, processRunner, toolLocator)
         {
             _resolver = resolver;
+        }
+
+        /// <summary>
+        /// Executes FluentMigrator using the provided settings.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        public void Run(FluentMigratorSettings settings)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            Run(settings, GetArguments(settings));
+        }
+
+        /// <summary>
+        /// Gets alternative file paths which the tool may exist in
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <returns>The default tool path.</returns>
+        protected override IEnumerable<FilePath> GetAlternativeToolPaths(FluentMigratorSettings settings)
+        {
+            return new[] { _resolver.ResolvePath() };
+        }
+
+        /// <summary>
+        /// Gets the possible names of the tool executable.
+        /// </summary>
+        /// <returns>The tool executable name.</returns>
+        protected override IEnumerable<string> GetToolExecutableNames()
+        {
+            return new[]
+            {
+                "AnyCPU/40/Migrate.exe",
+                "AnyCPU/35/Migrate.exe",
+
+                "x86/40/Migrate.exe",
+                "x86/35/Migrate.exe"
+            };
         }
 
         /// <summary>
@@ -38,27 +78,25 @@ namespace Cake.FluentMigrator
             return "FluentMigrator";
         }
 
-        /// <summary>
-        /// Gets the possible names of the tool executable.
-        /// </summary>
-        /// <returns>
-        /// The tool executable name.
-        /// </returns>
-        protected override IEnumerable<string> GetToolExecutableNames()
+        private static void AddArgument(ProcessArgumentBuilder builder, string @switch, string value)
         {
-            return new[] { "AnyCPU/40/Migrate.exe", "AnyCPU/35/Migrate.exe", "x86/40/Migrate.exe", "x86/35/Migrate.exe" };
+            if (String.IsNullOrEmpty(value))
+            {
+                return;
+            }
+
+            builder.Append(@switch);
+            builder.AppendQuoted(value);
         }
 
-        /// <summary>
-        /// Gets alternative file paths which the tool may exist in
-        /// </summary>
-        /// <param name="settings">The settings.</param>
-        /// <returns>
-        /// The default tool path.
-        /// </returns>
-        protected override IEnumerable<FilePath> GetAlternativeToolPaths(FluentMigratorSettings settings)
+        private static void AddArgument(ProcessArgumentBuilder builder, string @switch, bool value)
         {
-            return new[] { _resolver.ResolvePath() };
+            if (!value)
+            {
+                return;
+            }
+
+            builder.Append(@switch);
         }
 
         private ProcessArgumentBuilder GetArguments(FluentMigratorSettings settings)
@@ -111,41 +149,6 @@ namespace Cake.FluentMigrator
             }
 
             return builder;
-        }
-
-        private static void AddArgument(ProcessArgumentBuilder builder, string @switch, string value)
-        {
-            if (String.IsNullOrEmpty(value))
-            {
-                return;
-            }
-
-            builder.Append(@switch);
-            builder.AppendQuoted(value);
-        }
-
-        private static void AddArgument(ProcessArgumentBuilder builder, string @switch, bool value)
-        {
-            if (!value)
-            {
-                return;
-            }
-
-            builder.Append(@switch);
-        }
-
-        /// <summary>
-        /// Executes FluentMigrator using the provided settings.
-        /// </summary>
-        /// <param name="settings">The settings.</param>
-        public void Run(FluentMigratorSettings settings)
-        {
-            if (settings == null)
-            {
-                throw new ArgumentNullException(nameof(settings));
-            }
-
-            Run(settings, GetArguments(settings));
         }
     }
 }
