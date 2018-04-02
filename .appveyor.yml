@@ -1,5 +1,5 @@
 before_build:
-    - choco install codecov --version 1.0.1
+    - nuget restore
 #---------------------------------#
 #  Build Script                   #
 #---------------------------------#
