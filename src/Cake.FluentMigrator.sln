@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.FluentMigrator", "Cake.FluentMigrator\Cake.FluentMigrator.csproj", "{2803512B-59C0-4A53-91E5-4D1C40949A63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.FluentMigrator.Tests", "Cake.FluentMigrator.Tests\Cake.FluentMigrator.Tests.csproj", "{08F1BC1D-4A27-418C-9044-51055A06B5FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27432267-8603-43B0-A89D-833C595EDD83}"
+	ProjectSection(SolutionItems) = preProject
+		..\.appveyor.yml = ..\.appveyor.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97552AE3-B79C-40DC-B761-74B8DF747E1B}
 	EndGlobalSection
 EndGlobal
