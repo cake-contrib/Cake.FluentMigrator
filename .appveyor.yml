@@ -1,5 +1,5 @@
 before_build:
-    -choco install codecov
+    - choco install codecov
 #---------------------------------#
 #  Build Script                   #
 #---------------------------------#
