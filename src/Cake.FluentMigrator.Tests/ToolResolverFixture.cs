@@ -29,7 +29,7 @@ namespace Cake.FluentMigrator.Tests
             Environment.Runtime.Returns(info =>
             {
                 var runtime = Substitute.For<ICakeRuntime>();
-                runtime.TargetFramework.Returns(callInfo => new FrameworkName(".Net 4.5.2", frameworkVersion));
+                runtime.BuiltFramework.Returns(callInfo => new FrameworkName(".Net 4.5.2", frameworkVersion));
                 return runtime;
             });
 

@@ -33,7 +33,7 @@ namespace Cake.FluentMigrator
         public FilePath ResolvePath()
         {
             var arch = _environment.Platform.Is64Bit ? "AnyCPU" : "x86";
-            var frameworkVersion = _environment.Runtime.TargetFramework.Version.Major >= 4 ? "40" : "35";
+            var frameworkVersion = _environment.Runtime.BuiltFramework.Version.Major >= 4 ? "40" : "35";
             var toolPath = _toolLocator.Resolve($"{arch}/{frameworkVersion}/Migrate.exe");
 
             if (toolPath == null || !_fileSystem.Exist(toolPath))
