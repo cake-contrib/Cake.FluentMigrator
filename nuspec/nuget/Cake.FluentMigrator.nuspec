@@ -8,7 +8,8 @@
     <owners>Fredrik Leijon, cake-contrib</owners>
     <description>FluentMigrator extension for Cake.</description>
     <summary>Adds FluentMigrator helper for cake scripts.</summary>
-     <license type="expression">MIT</license>
+    <license type="expression">MIT</license>
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
     <repository type="git" url="https://github.com/cake-contrib/Cake.FluentMigrator.git"/>
     <projectUrl>https://github.com/cake-contrib/Cake.FluentMigrator</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
