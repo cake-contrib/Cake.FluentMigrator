@@ -1,18 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<link rel="self" href="http://cake-contrib.github.io/Cake.FluentMigrator" />
 	<id>http://cake-contrib.github.io/Cake.FluentMigrator</id>
-	<title />
-	<rights>2017</rights>
-	<updated>2017-04-15T13:17:27Z</updated>
+	<title>Cake.FluentMigrator</title>
+	<link rel="self" href="http://cake-contrib.github.io/Cake.FluentMigrator" />
+	<rights>2019</rights>
+	<updated>2019-09-04T18:47:19Z</updated>
 	<entry>
+		<id>http://cake-contrib.github.io/Cake.FluentMigrator/blog/new-release-0.3.0</id>
+		<title>New Release - 0.3.0</title>
 		<author>
 			<name>gep13</name>
 		</author>
 		<link href="http://cake-contrib.github.io/Cake.FluentMigrator/blog/new-release-0.3.0" />
-		<id>http://cake-contrib.github.io/Cake.FluentMigrator/blog/new-release-0.3.0</id>
-		<title>New Release - 0.3.0</title>
 		<updated>2017-02-01T00:00:00Z</updated>
+		<content>&lt;h1 id="long-time-no-release"&gt;Long time, no release&lt;/h1&gt;
+&lt;p&gt;Thanks to a contribution from &amp;#64;devlead, we are releasing 0.3.0 of Cake.FluentMigrator.  This includes the following:&lt;/p&gt;
+&lt;h2 id="bug"&gt;Bug&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.FluentMigrator/issues/6"&gt;&lt;strong&gt;#6&lt;/strong&gt;&lt;/a&gt; FluentMigrator.Tools referencing an old FluentMigrator nuget version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="improvement"&gt;Improvement&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.FluentMigrator/issues/5"&gt;&lt;strong&gt;#5&lt;/strong&gt;&lt;/a&gt; Switch away from using gep13.DefaultBuild and use Cake.Recipe instead&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.FluentMigrator/issues/13"&gt;&lt;strong&gt;#13&lt;/strong&gt;&lt;/a&gt; Add Wyam Documentation generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It was decided that this was required due to the fact that with the impending release of Cake 0.18.0 all addins need to be at least 0.16.0, so we decided to upload to the latest.&lt;/p&gt;
+&lt;p&gt;Please do not hesitate to reach out in the &lt;a href="https://gitter.im/cake-contrib/Lobby"&gt;Gitter Channel&lt;/a&gt; if you have any issues using this addin.&lt;/p&gt;
+</content>
 		<summary>&lt;p&gt;Thanks to a contribution from @devlead, we are releasing 0.3.0 of Cake.FluentMigrator.  This includes the following:&lt;/p&gt;</summary>
 	</entry>
 </feed>
