@@ -39,28 +39,28 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"FluentMigratorRunner",
-            content:"FluentMigratorRunner",
+            title:"IFluentMigratorToolResolver",
+            content:"IFluentMigratorToolResolver",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorRunner',
-            title:"FluentMigratorRunner",
+            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/IFluentMigratorToolResolver',
+            title:"IFluentMigratorToolResolver",
             description:""
         }
     );
     a(
         {
             id:1,
-            title:"FluentMigratorSettings",
-            content:"FluentMigratorSettings",
+            title:"FluentMigratorToolResolver",
+            content:"FluentMigratorToolResolver",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorSettings',
-            title:"FluentMigratorSettings",
+            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorToolResolver',
+            title:"FluentMigratorToolResolver",
             description:""
         }
     );
@@ -81,28 +81,28 @@ var searchModule = function() {
     a(
         {
             id:3,
-            title:"FluentMigratorToolResolver",
-            content:"FluentMigratorToolResolver",
+            title:"FluentMigratorSettings",
+            content:"FluentMigratorSettings",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorToolResolver',
-            title:"FluentMigratorToolResolver",
+            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorSettings',
+            title:"FluentMigratorSettings",
             description:""
         }
     );
     a(
         {
             id:4,
-            title:"IFluentMigratorToolResolver",
-            content:"IFluentMigratorToolResolver",
+            title:"FluentMigratorRunner",
+            content:"FluentMigratorRunner",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/IFluentMigratorToolResolver',
-            title:"IFluentMigratorToolResolver",
+            url:'/Cake.FluentMigrator/api/Cake.FluentMigrator/FluentMigratorRunner',
+            title:"FluentMigratorRunner",
             description:""
         }
     );
