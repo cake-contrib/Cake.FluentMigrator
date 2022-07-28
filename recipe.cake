@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=1.0.1
+#load nuget:?package=Cake.Recipe&version=2.2.1
 
 Environment.SetVariableNames();
 
@@ -9,7 +9,7 @@ BuildParameters.SetParameters(context: Context,
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.FluentMigrator",
                             appVeyorAccountName: "cakecontrib",
-                            shouldRunGitVersion: true);
+                            shouldCalculateVersion: true);
 
 BuildParameters.PrintParameters(Context);
 
