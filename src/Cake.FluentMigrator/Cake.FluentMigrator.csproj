@@ -1,76 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2803512B-59C0-4A53-91E5-4D1C40949A63}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.FluentMigrator</RootNamespace>
-    <AssemblyName>Cake.FluentMigrator</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Cake.FluentMigrator.XML</DocumentationFile>
+    <TargetFrameworks>net461;net5.0;netstandard2.0</TargetFrameworks>
     <CodeAnalysisRuleSet>Cake.FluentMigrator.ruleset</CodeAnalysisRuleSet>
+    <IsPackable>true</IsPackable>
+    <CreateXmlDoc>true</CreateXmlDoc>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Cake.FluentMigrator.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>Cake.FluentMigrator.ruleset</CodeAnalysisRuleSet>
+  
+  <PropertyGroup>
+    <Authors>Fredrik Leijon, cake-contrib</Authors>
+    <Description>FluentMigrator extension for Cake.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://cake-contrib.github.io/Cake.FluentMigrator</PackageProjectUrl>
+    <PackageTags>cake;build;cake-build;script;addin;cake-addin;FluentMigrator</PackageTags>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.FluentMigrator.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.FluentMigrator/releases</PackageReleaseNotes>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Cake.Core, Version=0.33.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cake.Core.0.33.0\lib\net46\Cake.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <!-- opt out of GCC0009 for the moment -->
+    <CakeContribGuidelinesOmitRecommendedCakeVersion Include="Cake.Core" />
+    <!-- opt out of stylecop for the moment -->
+    <CakeContribGuidelinesOmitRecommendedReference Include="StyleCop.Analyzers" />
+    <CakeContribGuidelinesOmitRecommendedConfigFile Include="stylecop.json" />
   </ItemGroup>
+  
   <ItemGroup>
-    <Compile Include="..\SolutionInfo.cs">
-      <Link>Properties\SolutionInfo.cs</Link>
-    </Compile>
-    <Compile Include="FluentMigratorAliases.cs" />
-    <Compile Include="FluentMigratorRunner.cs" />
-    <Compile Include="FluentMigratorSettings.cs" />
-    <Compile Include="FluentMigratorToolResolver.cs" />
-    <Compile Include="IFluentMigratorToolResolver.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Cake.FluentMigrator.ruleset" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
