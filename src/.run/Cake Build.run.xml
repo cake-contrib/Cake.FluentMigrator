@@ -1,0 +1,9 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Cake Build" type="CAKE_CONFIGURATION" factoryName="Cake configuration factory">
+    <option name="additionalArguments" />
+    <option name="scriptPath" value="../recipe.cake" />
+    <method v="2">
+      <option name="Cake.RestoreNetToolsBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
